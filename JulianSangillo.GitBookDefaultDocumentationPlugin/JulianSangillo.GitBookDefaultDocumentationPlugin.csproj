@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<Version>0.1.0</Version>
+		<Authors>juliansangillo</Authors>
+		<Description>DefaultDocumentation plugin that organizes markdown output into a format that can be used with GitBook</Description>
+		<PackageTags>docs documentation markdown</PackageTags>
+<!--		<PackageIcon></PackageIcon>-->
+		<Copyright>Copyright (c) 2023 Julian Sangillo</Copyright>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/juliansangillo/DefaultDocumentationPlugins/JulianSangillo.GitBookDefaultDocumentationPlugin</RepositoryUrl>
+		<DevelopmentDependency>true</DevelopmentDependency>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)ds.snk</AssemblyOriginatorKeyFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="JulianSangillo.GitBookDefaultDocumentationPlugin.targets" Pack="true" PackagePath="build/" />
+		<None Include="..\LICENSE" Pack="true" PackagePath="" />
+		<None Include="README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JulianSangillo.StyleAnalyzers" Version="0.2.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2022.3.1" PrivateAssets="all" />
+    <PackageReference Include="DefaultDocumentation.Markdown" Version="0.8.3" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.6.3" PrivateAssets="all" />
+  </ItemGroup>
+</Project>
